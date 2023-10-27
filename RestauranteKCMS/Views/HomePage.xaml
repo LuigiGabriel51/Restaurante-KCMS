@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestauranteKCMS.Views.HomePage"
+             xmlns:vm="clr-namespace:RestauranteKCMS.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:VMhome/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <RefreshView Refreshing="RefreshView_Refreshing" x:Name="refreshview">
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="{Binding Saudacoes}" TextColor="Black" Margin="20"/>
+                    <CollectionView ItemsSource="{Binding ProtuctsInCategories}" Grid.Row="2" ItemsLayout="HorizontalList" x:Name="collectionIcons"
+                            SelectionMode="Single" SelectionChanged="CollectionView_SelectionChanged" HorizontalOptions="Center"
+                            VerticalOptions="Center" HeightRequest="60">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="30" Padding="0" HeightRequest="40" WidthRequest="60">
+
+                                    <Frame HeightRequest="60" WidthRequest="100" BackgroundColor="CornflowerBlue" VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="Center"  HasShadow="True" Padding="0">
+                                        <StackLayout Padding="10">
+                                            <Label Text="{Binding Category.Icon}" TextColor="White" FontFamily="Fasolid" FontSize="20" HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
+                                            <Label Text="{Binding Category.Name}" HorizontalOptions="Center" FontSize="10" MaxLines="1"
+                                           LineBreakMode="TailTruncation"/>
+                                        </StackLayout>
+
+                                    </Frame >
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.EmptyView>
+                            <ContentView>
+                                <StackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand">
+                                    <Label Text="Crie algumas categorias"
+                           Margin="10,25,10,10"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           HorizontalOptions="Fill" TextColor="Black"
+                           HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                            </ContentView>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                    <Frame Grid.Row="3" HorizontalOptions="Center" WidthRequest="200" HeightRequest="100" VerticalOptions="Center">
+                        <Grid>
+                            <Image Source="{Binding ImageRecomended}"/>
+                            <Label Text="{Binding RecomendedProd.price, StringFormat='R$ {0}'}" TextColor="Red" HorizontalOptions="End" VerticalOptions="End"
+                           />
+                        </Grid>
+                        <Frame.Triggers>
+                            <DataTrigger TargetType="Frame" Binding="{Binding Products.Count}" Value="0">
+                                <Setter Property="IsVisible" Value="false"/>
+                            </DataTrigger>
+                        </Frame.Triggers>
+                    </Frame>
+
+                </Grid>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

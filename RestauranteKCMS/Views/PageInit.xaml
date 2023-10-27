@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestauranteKCMS.Views.PageInit"  Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="DodgerBlue" HeightRequest="600" CornerRadius="100" Margin="0,-150,0,-50">
+                <Label Text="Restaurante KCMS" VerticalOptions="Center" HorizontalOptions="Center"
+                       FontAttributes="Bold" FontSize="25"/>
+            </Frame>
+            <Button Text="Entrar" BackgroundColor="SkyBlue" WidthRequest="100" HeightRequest="70" Margin="60,0,60,0"
+                    CornerRadius="20" Clicked="EnterButton"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

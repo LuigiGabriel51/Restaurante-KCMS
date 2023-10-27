@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestauranteKCMS.Views.CreatePage"
+             xmlns:vm="clr-namespace:RestauranteKCMS.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:VMcreate/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <Grid Padding="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Criar nova categoria" TextColor="Black"/>
+                    <Label Text="Aqui você poderá adicionar uma nova categoria, escolha um bom nome, e aproveite sua nova categoria." 
+                           TextColor="Black" Grid.Row="1" FontSize="10"/>
+                    <Button Text=">" Grid.Row="2" WidthRequest="100" HorizontalOptions="End" Padding="0"
+                            FontSize="10" Clicked="pushAddCategory"/>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Criar novo prato" TextColor="Black"/>
+                    <Label Text="Aqui você poderá adicionar uma novo prato, personalizar da sua forma, escolha uma categoria e Voilà, um novo prato!" 
+                           TextColor="Black" Grid.Row="1" FontSize="10"/>
+                    <Button Text=">" Grid.Row="2" WidthRequest="100" HorizontalOptions="End" Padding="0"
+                            FontSize="10" Clicked="pushAddProduct"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

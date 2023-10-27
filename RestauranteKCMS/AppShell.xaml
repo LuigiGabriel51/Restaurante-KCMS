@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:RestauranteKCMS.Views"
+       Title="RestauranteKCMS"
+       x:Class="RestauranteKCMS.AppShell" Shell.FlyoutBehavior="Disabled"
+       xmlns:model="clr-namespace:RestauranteKCMS.Models">
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:PageInit}" />
+
+    <TabBar Shell.BackgroundColor="DodgerBlue">
+        <ShellContent Title="Início" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" 
+                      Shell.UnselectedColor="Silver" Shell.TitleColor="White" Icon="botao_home">
+        </ShellContent>
+        <ShellContent Title="Criar" Route="CreatePage" ContentTemplate="{DataTemplate local:CreatePage}" 
+                      Shell.UnselectedColor="Silver" Shell.TitleColor="White" Shell.TabBarUnselectedColor="Silver"
+                      Icon="adicionar">
+                
+        </ShellContent>
+    </TabBar>
+
+</Shell>
