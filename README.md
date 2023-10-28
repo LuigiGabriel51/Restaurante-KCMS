@@ -22,36 +22,37 @@ Adicionais: **Tela de compra**
  
 ## Capturas de Tela
 
+> Tela inicial que apresenta a logo da empresa.
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/e629e5eb-0078-4c14-98fa-3932802c53db" width="300" height="600">
 
-![Screenshot_20231028_034633](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/e629e5eb-0078-4c14-98fa-3932802c53db)
-> Tela inicial que apresenta a logo da impresa.
-
-![Screenshot_20231028_034638](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/bacde9f5-e1a2-4a46-ad7a-3001024a80ec)
 > Tela principal do aplicativo mostrando categorias, produtos e recomendados.
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/bacde9f5-e1a2-4a46-ad7a-3001024a80ec" width="300" height="600">
 
-![Screenshot_20231028_034655](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/b40f723e-299c-4231-addc-a7cc17a4c40f)
-> Tela 'Criar, uma aba para levar o usuário para as Página de criação de produtos e categorias.
+> Tela "Criar", uma aba para levar o usuário para as Página de criação de produtos e categorias.
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/b40f723e-299c-4231-addc-a7cc17a4c40f" width="300" height="600">
 
-![Screenshot_20231028_034659](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/58fb7bf4-94cd-4920-a311-9698ae5ff0f0)
 > Página de inserção de uma nova categoria.
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/58fb7bf4-94cd-4920-a311-9698ae5ff0f0" width="300" height="600">
 
-![Screenshot_20231028_034704](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/5d3e5002-eb6c-435c-9073-97919b231377)
 > Página de inserção de um novo produto.
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/5d3e5002-eb6c-435c-9073-97919b231377" width="300" height="600">
 
-![Screenshot_20231028_034643](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/a03a5827-d9d4-479d-a6fd-43896d1009fd)
 > Página de uma categoria específica do usuário
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/a03a5827-d9d4-479d-a6fd-43896d1009fd" width="300" height="600">
 
-![Screenshot_20231028_034648](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/6e565cc3-2aae-43c5-9602-514faf9d47f3)
 > Página de compra (simulação), onde o usuário pode adicionar vários pedidos
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/6e565cc3-2aae-43c5-9602-514faf9d47f3" width="300" height="600">
 
-![Screenshot_20231028_034715](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/e3c32fb5-0da9-45aa-bfd3-cce4adb5d95a)
 > Aba lateral (FlyoutItem) onde tem os direitos do app, as redes sociais do app, e rotas para a página central do app e a página de alterar a categoria de um produto
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/e3c32fb5-0da9-45aa-bfd3-cce4adb5d95a" width="300" height="600">
 
-![Screenshot_20231028_034721](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/4549a541-eb6c-4d85-83d9-3718b81dbf51)
 > Página de alteração de produto, aqui você pode alterar a cateoria de qualquer produto
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/4549a541-eb6c-4d85-83d9-3718b81dbf51" width="300" height="600">
 
-![Screenshot_20231028_034726](https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/c826c2ae-667b-43a4-b0bc-93a569bc0e65)
-> Continuando na Página de alteração de produtos, quando o usuário clica no item, abre um carde para a alteração
+> Continuando na Página de alteração de produtos, quando o usuário clica no item, abre um card para a alteração
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/c826c2ae-667b-43a4-b0bc-93a569bc0e65" width="300" height="600">
+
+
 ## Pré-requisitos
 
 Para executar o aplicativo em seu ambiente de desenvolvimento, você precisará do seguinte:
