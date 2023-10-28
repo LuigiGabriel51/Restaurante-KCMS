@@ -12,10 +12,12 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="layout">
-                <SearchBar Grid.Row="1" HorizontalOptions="Center" BackgroundColor="SteelBlue" Margin="35,40,35,0"/>
+                <SearchBar Grid.Row="1" HorizontalOptions="Center" BackgroundColor="SteelBlue" Margin="35,40,35,0"
+                           TextChanged="SearchBar_TextChanged"/>
 
                 <Label Text="{Binding Category.Name}" TextColor="Black" Margin="40" FontSize="15" FontAttributes="Italic"/>
-                <ListView ItemsSource="{Binding Products}" HasUnevenRows="True">
+                <ListView ItemsSource="{Binding Products}" HasUnevenRows="True" x:Name="Listproducts"
+                          ItemSelected="Listproducts_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -35,7 +37,7 @@
                                             </Grid.ColumnDefinitions>
                                             <Image Source="{Binding image, Converter={StaticResource ByteArrayToImage}}" HeightRequest="60"
                                                HorizontalOptions="End" Grid.RowSpan="4" Grid.Column="1"/>
-                                            <Label Text="{Binding name}" TextColor="Black" Margin="20,0,0,0"/>
+                                            <Label Text="{Binding name}" TextColor="Black" Margin="20,0,0,0" FontFamily="Fasolid" FontSize="12"/>
                                             <Label Text="{Binding description}" TextColor="Black" Grid.RowSpan="2" Grid.Row="1"
                                                FontSize="6" FontAttributes="Italic" Margin="20,0,0,0"/>
                                             <Label Text="{Binding price, StringFormat='R$ {0:F2}'}" TextColor="Red" FontSize="13" Grid.Row="3"

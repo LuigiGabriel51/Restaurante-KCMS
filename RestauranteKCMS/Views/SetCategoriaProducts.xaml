@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RestauranteKCMS.Views.SetCategoriaProducts"
+             xmlns:vm="clr-namespace:RestauranteKCMS.ViewModels" xmlns:converters="clr-namespace:RestauranteKCMS.Services">
+    <ContentPage.BindingContext>
+        <vm:VMalterProducts/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Padding="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Todos os produtos" TextColor="Black"
+                       VerticalOptions="Start" Margin="20" FontSize="16"
+                       HorizontalOptions="CenterAndExpand" />
+                <ListView ItemsSource="{Binding Products}" HasUnevenRows="True" Grid.Row="1" ItemSelected="ListView_ItemSelected"
+                          HeightRequest="500" HorizontalOptions="Center" VerticalOptions="Center" x:Name="listP">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="10">
+                                    <Frame BackgroundColor="DodgerBlue" Padding="5">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="60"/>
+                                                <ColumnDefinition Width="100"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding image, Converter={StaticResource ByteArrayToImage}}" Grid.RowSpan="2"
+                                                   HeightRequest="50" />
+                                            <Label Text="{Binding name}" Grid.Column="1"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                    </ListView.GestureRecognizers>
+                </ListView>
+                <Frame Grid.Row="1" HeightRequest="210" VerticalOptions="Center" x:Name="card" IsVisible="false"
+                       BackgroundColor="CornflowerBlue">
+                    <StackLayout Spacing="10">
+                        <Label Text="{Binding name}" HorizontalOptions="Center" Margin="20" TextColor="White" />
+                        <Label Text="Alterar Categoria" HorizontalOptions="Start" Margin="10" TextColor="White" FontSize="10"/>
+                        <Picker Grid.Row="4" ItemsSource="{Binding NameCategories}" Title="Selecione uma categoria" TextColor="Black"
+                                HorizontalOptions="Start" BackgroundColor="White" Margin="10" TitleColor="Black" FontSize="10"
+                                SelectedIndexChanged="Picker_SelectedIndexChanged" WidthRequest="160" HeightRequest="32" 
+                                x:Name="picker">
+                        </Picker>
+                        <Button Text="Salvar" HeightRequest="30" WidthRequest="150" HorizontalOptions="Center"
+                                Padding="1" BackgroundColor="White" TextColor="SlateBlue" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </Frame>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <ScrollView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+            </ScrollView.GestureRecognizers>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

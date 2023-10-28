@@ -58,5 +58,21 @@ namespace RestauranteKCMS.Views
             }
             return ProtuctsInCategories;
         }
+
+        private void enterRecomend(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            Product current = button.BindingContext as Product;
+            var page = new ViewProduct(current);
+            Navigation.PushAsync(page);
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Frame frame = sender as Frame;
+            Product current = frame.BindingContext as Product;
+            var page = new ViewProduct(current);
+            Navigation.PushAsync(page);
+        }
     }
 }

@@ -49,7 +49,7 @@ namespace RestauranteKCMS.Services
             return _database.Update(entity);
         }
         //update product
-        public int UpdateProducts(Category entity)
+        public int UpdateProducts(Product entity)
         {
             return _database.Update(entity);
         }
@@ -60,7 +60,7 @@ namespace RestauranteKCMS.Services
             return _database.Delete(entity);
         }
         //delete product
-        public int DeleteProducts(Category entity)
+        public int DeleteProducts(Product entity)
         {
             return _database.Delete(entity);
         }

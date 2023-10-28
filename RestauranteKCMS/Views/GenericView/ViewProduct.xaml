@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converters="clr-namespace:RestauranteKCMS.Services"
+             x:Class="RestauranteKCMS.Views.GenericView.ViewProduct" Shell.TabBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            
+            <Image Source="{Binding image, Converter={StaticResource ByteArrayToImage}}" 
+                       Margin="20" HorizontalOptions="Center" HeightRequest="250" WidthRequest="250"/>
+
+            <Label Text="{Binding name}" TextColor="Black" FontFamily="Fasolid" Margin="10"
+                   HorizontalOptions="Start" FontSize="17"/>
+            <Label Text="Descrição" TextColor="Black" Margin="10"
+                   HorizontalOptions="Start" FontSize="15"/>
+            <Label Text="{Binding description}" TextColor="Black" Margin="10"
+                   HorizontalOptions="Start" FontSize="10"/>
+
+            <Frame BackgroundColor="DodgerBlue" Margin="-20,20,-20,-40" HeightRequest="200" CornerRadius="20">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Text="{Binding price, StringFormat='Total:    R$ {0}'}" TextColor="White" FontFamily="Fasolid" 
+                           HorizontalOptions="Start" FontSize="14" x:Name="price"/>
+                    <Label Text="1" TextColor="Black" Grid.Column="1" HorizontalOptions="Center"
+                           VerticalOptions="Center" x:Name="unidade"/>
+                    <Button Text="+" Grid.Column="1" HorizontalOptions="Start" Padding="1" VerticalOptions="Center" 
+                            WidthRequest="50" CornerRadius="50" HeightRequest="50" BackgroundColor="White" TextColor="Black"
+                            Margin="0,0,0,0" Clicked="add"/>
+                    <Button Text="-" Grid.Column="1" HorizontalOptions="End" Padding="1" VerticalOptions="Center"
+                            WidthRequest="50" CornerRadius="50" HeightRequest="50" BackgroundColor="White" TextColor="Black"
+                            Clicked="sub"/>
+                    <Button Text="Comprar" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="SkyBlue" TextColor="White"
+                            HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="200" Margin="20"
+                            Clicked="confirm"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

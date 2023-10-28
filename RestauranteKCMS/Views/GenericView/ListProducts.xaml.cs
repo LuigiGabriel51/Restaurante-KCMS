@@ -1,4 +1,5 @@
-﻿using RestauranteKCMS.Models;
+﻿using Android.App.AppSearch;
+using RestauranteKCMS.Models;
 using RestauranteKCMS.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,26 @@ namespace RestauranteKCMS.Views.GenericView
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListProducts : ContentPage
 	{
-		public ListProducts (ProtuctsInCategory category)
+        ProtuctsInCategory category;
+
+        public ListProducts (ProtuctsInCategory category)
 		{
 			InitializeComponent ();
-			layout.BindingContext = category;
+            this.category = category;
+			layout.BindingContext = this.category;
 		}
-	}
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchBar searchBar = (SearchBar)sender;
+            Listproducts.ItemsSource = this.category.Products.Where(x=>x.name.ToLowerInvariant().Contains(searchBar.Text)).ToList();
+        }
+
+        private void Listproducts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Product current = e.SelectedItem as Product;
+            var page = new ViewProduct(current);
+            Navigation.PushAsync(page);
+        }
+    }
 }

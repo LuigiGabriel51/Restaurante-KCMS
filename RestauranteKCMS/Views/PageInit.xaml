@@ -5,10 +5,15 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="DodgerBlue" HeightRequest="600" CornerRadius="100" Margin="0,-150,0,-50">
-                <Label Text="Restaurante KCMS" VerticalOptions="Center" HorizontalOptions="Center"
-                       FontAttributes="Bold" FontSize="25"/>
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    
+                    <Label Text="Restaurante KCMS" VerticalOptions="Center" HorizontalOptions="Center"
+                            FontAttributes="Bold" FontSize="25" Margin="30"/>
+                    <Image Source="kcms"/>
+                    
+                </StackLayout>
             </Frame>
-            <Button Text="Entrar" BackgroundColor="SkyBlue" WidthRequest="100" HeightRequest="70" Margin="60,0,60,0"
+            <Button Text="Entrar" BackgroundColor="SkyBlue" WidthRequest="100" HeightRequest="50" Margin="70,10,70,0"
                     CornerRadius="20" Clicked="EnterButton"/>
         </StackLayout>
     </ContentPage.Content>

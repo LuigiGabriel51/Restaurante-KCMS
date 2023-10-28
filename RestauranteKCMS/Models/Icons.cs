@@ -20,5 +20,9 @@ namespace RestauranteKCMS.Models
         public const string Cookie = "\uf563";
         public const string Cheese = "\uf7ef";
         public const string BowlRice = "\ue2eb";
+
+        public const string Instagram = "\uf16d";
+        public const string Github = "\uf09b";
+        public const string Chrome = "\uf268";
     }
 }
