@@ -8,6 +8,7 @@ namespace RestauranteKCMS.Models
     {
         public const string HouseChimney = "\ue3af";
         public const string SquarePlus = "\uf0fe";
+        public const string Trash = "\uf1f8";
 
         public const string PizzaSlice = "\uf818";
         public const string MugHot = "\u2615";

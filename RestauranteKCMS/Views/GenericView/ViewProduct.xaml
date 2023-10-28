@@ -32,7 +32,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    
+
                     <Label Text="{Binding price, StringFormat='Total:    R$ {0}'}" TextColor="White" FontFamily="Fasolid" 
                            HorizontalOptions="Start" FontSize="14" x:Name="price"/>
                     <Label Text="1" TextColor="Black" Grid.Column="1" HorizontalOptions="Center"

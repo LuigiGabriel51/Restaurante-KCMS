@@ -56,7 +56,7 @@
                            Margin="10,25,10,10"
                            FontAttributes="Bold"
                            FontSize="18"
-                           HorizontalOptions="Fill" TextColor="Black"
+                           HorizontalOptions="Fill" TextColor="Red"
                            HorizontalTextAlignment="Center" />
                                 </StackLayout>
                             </ContentView>
@@ -65,8 +65,8 @@
                     <Label Text="Recomendados" TextColor="Black" FontSize="20" HorizontalTextAlignment="Start" Grid.Row="3"
                             Margin="20,0,0,0" VerticalOptions="End"/>
                     <Frame Grid.Row="4" HorizontalOptions="Center" WidthRequest="250" HeightRequest="150" VerticalOptions="Center"
-                           BorderColor="Silver" BindingContext="{Binding RecomendedProd}">
-                        <Grid>
+                           BorderColor="Silver" >
+                        <Grid BindingContext="{Binding RecomendedProd}" x:Name="grid">
                             <Label Text="{Binding name}" TextColor="Black" FontFamily="Fasolid" FontSize="13"/>
                             <Image Source="{Binding image, Converter={StaticResource ByteArrayToImage}}" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"
                                    VerticalOptions="Center" />
@@ -74,16 +74,15 @@
                            />
                             <Button Text=">" HorizontalOptions="End" VerticalOptions="Start" HeightRequest="20" Padding="1"
                                     WidthRequest="50" Clicked="enterRecomend"/>
-                            
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                            </Grid.GestureRecognizers>
                         </Grid>
                         <Frame.Triggers>
-                            <DataTrigger TargetType="Frame" Binding="{Binding Id}" Value="0">
+                            <DataTrigger TargetType="Frame" Binding="{Binding Products.Count}" Value="0">
                                 <Setter Property="IsVisible" Value="false"/>
                             </DataTrigger>
                         </Frame.Triggers>
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
-                        </Frame.GestureRecognizers>
                     </Frame>
 
                 </Grid>

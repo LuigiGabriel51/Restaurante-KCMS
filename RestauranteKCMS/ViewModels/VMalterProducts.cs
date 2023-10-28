@@ -1,10 +1,12 @@
 ﻿using Android.Content;
 using MvvmHelpers;
+using MvvmHelpers.Commands;
 using RestauranteKCMS.Models;
 using RestauranteKCMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace RestauranteKCMS.ViewModels
 {
@@ -27,6 +29,15 @@ namespace RestauranteKCMS.ViewModels
         }
         public static List<string> NameCategories { get; set; }
         public static string nameCategory { get; set; }
+
+        private bool refreshing;
+        public bool Refreshing
+        {
+            get => refreshing;
+            set => SetProperty(ref refreshing, value);
+        }
+
+        public ICommand Refresh => new Command(refresh);
         public VMalterProducts() 
         {
             DBcontext = new DBcontext();
@@ -45,5 +56,22 @@ namespace RestauranteKCMS.ViewModels
             }
         }
 
+        private void refresh()
+        {
+            Products = DBcontext.ListProducts();
+            Categories = DBcontext.ListCategory();
+
+            var category = Categories;
+            NameCategories = new List<string>();
+            if (category != null)
+            {
+                categories = category;
+                foreach (var categorie in categories)
+                {
+                    NameCategories.Add(categorie.Name);
+                }
+            }
+            Refreshing = false;
+        }
     }
 }

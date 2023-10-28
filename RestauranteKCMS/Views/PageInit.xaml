@@ -7,9 +7,7 @@
             <Frame BackgroundColor="DodgerBlue" HeightRequest="600" CornerRadius="100" Margin="0,-150,0,-50">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     
-                    <Label Text="Restaurante KCMS" VerticalOptions="Center" HorizontalOptions="Center"
-                            FontAttributes="Bold" FontSize="25" Margin="30"/>
-                    <Image Source="kcms"/>
+                    <Image Source="kcms" HeightRequest="200"/>
                     
                 </StackLayout>
             </Frame>

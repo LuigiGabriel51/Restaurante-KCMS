@@ -59,13 +59,29 @@ namespace RestauranteKCMS.Views
         {
             var DBcontext = new DBcontext();
             ProductSelected.Idcategory = VMalterProducts.nameCategory;
-            var retorno = DBcontext.UpdateProducts(ProductSelected);
+            var response = DBcontext.UpdateProducts(ProductSelected);
             Context context = Android.App.Application.Context;
             string text = "Produto atualizado!";
             ToastLength duration = ToastLength.Short;
 
             var toast = Toast.MakeText(context, text, duration);
             toast.Show();
+        }
+
+        private async void deleteProduct(object sender, EventArgs e)
+        {
+            bool decision = await DisplayAlert("Alerta", "Você tem certeza que deseja excluir esse produto?", "Sim", "Não");
+            if (decision)
+            {
+                var DBcontext = new DBcontext();
+                var response = DBcontext.DeleteProducts(ProductSelected);
+
+                Context context = Android.App.Application.Context;
+                string text = "Item excluído!";
+                ToastLength duration = ToastLength.Short;
+                var toast = Toast.MakeText(context, text, duration);
+                toast.Show();
+            }           
         }
     }
 }

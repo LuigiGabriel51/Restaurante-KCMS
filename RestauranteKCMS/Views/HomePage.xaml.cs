@@ -1,10 +1,10 @@
-﻿using Android.Webkit;
-using RestauranteKCMS.Models;
+﻿using RestauranteKCMS.Models;
 using RestauranteKCMS.Services;
 using RestauranteKCMS.ViewModels;
 using RestauranteKCMS.Views.GenericView;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +39,7 @@ namespace RestauranteKCMS.Views
             var Categories = dbcontext.ListCategory();
             var Products = dbcontext.ListProducts();
             var productsOganized = Organize(Categories, Products);
+            recommended();
             collectionIcons.ItemsSource = productsOganized;
             refreshview.IsRefreshing = false;
         }
@@ -59,6 +60,21 @@ namespace RestauranteKCMS.Views
             return ProtuctsInCategories;
         }
 
+        private void recommended()
+        {
+            Random rnd = new Random();
+            var RecomendedProd = new Product();
+            List<Product> prod = dbcontext.ListProducts();
+            if (prod.Count > 0)
+            {
+                int maxIndex = prod.Count - 1;
+                int randomIndex = rnd.Next(0, maxIndex);
+                RecomendedProd = prod[randomIndex];
+            }
+            grid.BindingContext = RecomendedProd;
+        }
+
+
         private void enterRecomend(object sender, EventArgs e)
         {
             Button button = sender as Button;
@@ -69,8 +85,8 @@ namespace RestauranteKCMS.Views
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Frame frame = sender as Frame;
-            Product current = frame.BindingContext as Product;
+            Grid gr = sender as Grid;
+            Product current = gr.BindingContext as Product;
             var page = new ViewProduct(current);
             Navigation.PushAsync(page);
         }

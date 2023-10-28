@@ -53,8 +53,8 @@ namespace RestauranteKCMS.ViewModels
             }
         }
 
-        private int _priceproduct;
-        public int PriceProduct
+        private float _priceproduct;
+        public float PriceProduct
         {
             get { return _priceproduct; }
             set
