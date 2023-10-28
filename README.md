@@ -65,7 +65,7 @@ Para executar o aplicativo em seu ambiente de desenvolvimento, você precisará 
 1. Clone o repositório para o seu ambiente local:
 
    ```bash
-   git clone https://github.com/seu-usuario/restaurante-kcms.git
+   git clone https://github.com/LuigiGabriel51/Restaurante-KCMS
 2. Abra o projeto no Visual Studio.
 
 3. Configure o emulador ou conecte seu dispositivo.
