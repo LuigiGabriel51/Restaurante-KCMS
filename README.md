@@ -71,3 +71,5 @@ Para executar o aplicativo em seu ambiente de desenvolvimento, você precisará 
 3. Configure o emulador ou conecte seu dispositivo.
 
 4. Compile e execute o aplicativo.
+   
+5. Não esqueça, quando editar alguma informação, deslize verticalmente para baixo para ativar o refresh, assim vai atualizar os dados.
