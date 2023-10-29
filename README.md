@@ -44,7 +44,7 @@ Adicionais: **Tela de compra**
 <img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/6e565cc3-2aae-43c5-9602-514faf9d47f3" width="300" height="600">
 
 > Aba lateral (FlyoutItem) onde tem os direitos do app, as redes sociais do app, e rotas para a página central do app e a página de alterar a categoria de um produto
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/e3c32fb5-0da9-45aa-bfd3-cce4adb5d95a" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/6ba9f327-1a25-49eb-9608-e9abc60c5da2" width="300" height="600">
 
 > Página de alteração de produto, aqui você pode alterar a cateoria de qualquer produto
 <img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/4549a541-eb6c-4d85-83d9-3718b81dbf51" width="300" height="600">
