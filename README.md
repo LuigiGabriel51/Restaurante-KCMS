@@ -50,7 +50,7 @@ Adicionais: **Tela de compra**
 <img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/4549a541-eb6c-4d85-83d9-3718b81dbf51" width="300" height="600">
 
 > Continuando na Página de alteração de produtos, quando o usuário clica no item, abre um card para a alteração
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/c826c2ae-667b-43a4-b0bc-93a569bc0e65" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/9a699d38-83bf-4985-8e7f-375415f3e5ea" width="300" height="600">
 
 
 ## Pré-requisitos
