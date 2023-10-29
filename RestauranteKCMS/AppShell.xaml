@@ -6,16 +6,20 @@
        x:Class="RestauranteKCMS.AppShell" Shell.FlyoutBehavior="Flyout"
        xmlns:model="clr-namespace:RestauranteKCMS.Models" >
 
+    
     <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:PageInit}" Shell.FlyoutItemIsVisible="False"/>
 
-    <FlyoutItem Title="Restaurante KCMS" FlyoutIcon="kcms" >
+    <FlyoutItem Title="Restaurante KCMS" FlyoutIcon="kcms" Shell.FlyoutBackdrop="#001d3b" FlyoutDisplayOptions="AsMultipleItems"
+                FlyoutItemIsVisible="True" >
+        
         <ShellContent Title="Início" ContentTemplate="{DataTemplate local:HomePage}" 
                   Shell.UnselectedColor="Silver" Shell.TitleColor="White" Icon="botao_home"
-                  Shell.TabBarTitleColor="DodgerBlue" Route="HomePage"
-                  Shell.FlyoutWidth="100"/>
+                  Shell.TabBarTitleColor="DodgerBlue" Route="HomePage"/>
+
         <ShellContent Title="Criar" Route="CreatePage" ContentTemplate="{DataTemplate local:CreatePage}" 
-          Shell.UnselectedColor="Silver" Shell.TitleColor="White" Shell.TabBarUnselectedColor="Silver"
-          Icon="adicionar" Shell.FlyoutItemIsVisible="True" Shell.TabBarTitleColor="DodgerBlue"/>
+                  Shell.UnselectedColor="Silver" Shell.TitleColor="White" Shell.TabBarUnselectedColor="Silver"
+                  Icon="adicionar" Shell.FlyoutItemIsVisible="True" Shell.TabBarTitleColor="DodgerBlue"/>
+
     </FlyoutItem>
     
     <FlyoutItem Title="Alterar Produto" FlyoutIcon="mudar">
@@ -25,8 +29,6 @@
     </FlyoutItem>
 
     
-
-
     <Shell.FlyoutFooter>
         <StackLayout>
             <StackLayout Orientation="Vertical" Spacing="15">
@@ -34,8 +36,8 @@
 
                 <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
 
-                    <Label Text="{Static model:IconFont.Instagram}" TextColor="Black" FontFamily="Fabrands"/>
-                    <Label Text="@kcmsbrasil" FontSize="10" TextColor="Black" Margin="0,0,10,0">
+                    <Label Text="{Static model:IconFont.Instagram}" TextColor="Black" FontFamily="Fabrands" FontSize="23"/>
+                    <Label Text="@kcmsbrasil" FontSize="12" TextColor="Black" Margin="0,5,10,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="@kcmsbrasil" TextColor="Blue" TextDecorations="Underline">
@@ -46,8 +48,8 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Text="{Static model:IconFont.Github}" TextColor="Black" FontFamily="Fabrands"/>
-                    <Label Text="kcmsbrasil" FontSize="10" TextColor="Black"  Margin="0,0,10,0">
+                    <Label Text="{Static model:IconFont.Github}" TextColor="Black" FontFamily="Fabrands" FontSize="23"/>
+                    <Label Text="kcmsbrasil" FontSize="12" TextColor="Black"  Margin="0,5,10,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="kcmsbrasil" TextColor="Blue" TextDecorations="Underline">
@@ -58,8 +60,8 @@
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
-                    <Label Text="{Static model:IconFont.Chrome}" TextColor="Black" FontFamily="Fabrands"/>
-                    <Label Text="KCMS" FontSize="10" TextColor="Black"  Margin="0,0,10,0">
+                    <Label Text="{Static model:IconFont.Chrome}" TextColor="Black" FontFamily="Fabrands" FontSize="23"/>
+                    <Label Text="KCMS" FontSize="12" TextColor="Black"  Margin="0,5,10,0">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="KCMS" TextColor="Blue" TextDecorations="Underline">

@@ -4,14 +4,14 @@
              x:Class="RestauranteKCMS.Views.PageInit"  Shell.NavBarIsVisible="False">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="DodgerBlue" HeightRequest="600" CornerRadius="100" Margin="0,-150,0,-50">
+            <Frame BackgroundColor="#001d3b" HeightRequest="600" CornerRadius="100" Margin="0,-150,0,-50">
                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     
                     <Image Source="kcms" HeightRequest="200"/>
                     
                 </StackLayout>
             </Frame>
-            <Button Text="Entrar" BackgroundColor="SkyBlue" WidthRequest="100" HeightRequest="50" Margin="70,10,70,0"
+            <Button Text="Entrar" BackgroundColor="DodgerBlue" WidthRequest="100" HeightRequest="50" Margin="70,10,70,0"
                     CornerRadius="20" Clicked="EnterButton"/>
         </StackLayout>
     </ContentPage.Content>
