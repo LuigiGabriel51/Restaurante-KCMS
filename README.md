@@ -18,7 +18,7 @@ O aplicativo "Restaurante KCMS" inclui as seguintes funcionalidades:
 
 6. **Alterar Categoria de um Produto**: Altere a categoria de um produto existente.
 
-Adicionais: **Tela de compra** (Demonstração visual de como ficaria a parte do cliente)
+Adicionais: **Tela de compra** (Demonstração visual de como ficaria a parte do cliente);
             **Recomendados**: sorteia um dos produtos e exibe para o usuário na homepage
             
 
