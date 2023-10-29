@@ -23,7 +23,7 @@ Adicionais: **Tela de compra**
 ## Capturas de Tela
 
 > Tela inicial que apresenta a logo da empresa.
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/e629e5eb-0078-4c14-98fa-3932802c53db" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/12aaf263-987b-4539-b5ba-0bb1b3e1f4e4" width="300" height="600">
 
 > Tela principal do aplicativo mostrando categorias, produtos e recomendados.
 <img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/bacde9f5-e1a2-4a46-ad7a-3001024a80ec" width="300" height="600">
