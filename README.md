@@ -19,7 +19,7 @@ O aplicativo "Restaurante KCMS" inclui as seguintes funcionalidades:
 6. **Alterar Categoria de um Produto**: Altere a categoria de um produto existente.
 
 Adicionais: **Tela de compra**
- 
+
 ## Capturas de Tela
 
 > Tela inicial que apresenta a logo da empresa.
@@ -51,6 +51,16 @@ Adicionais: **Tela de compra**
 
 > Continuando na Página de alteração de produtos, quando o usuário clica no item, abre um card para a alteração
 <img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/9a699d38-83bf-4985-8e7f-375415f3e5ea" width="300" height="600">
+
+## Demonstraçoes
+>Adicionando uma nova categoria
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/81bde887-5478-4c90-b064-ae13b9def98d">
+
+>Adicionando um novo produto
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/bd7f6488-1198-4b1e-8a20-eb3eb2069ade">
+
+>Aterando a categoria de um produto
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/027e228e-88df-4734-b358-89c7d476b7b2">
 
 
 ## Pré-requisitos
