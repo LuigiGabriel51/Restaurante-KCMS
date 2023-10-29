@@ -25,8 +25,10 @@ namespace RestauranteKCMS.Views.GenericView
 
             if (selectedIndex != -1)
             {
+                // Obtém o índice selecionado do Picker (se não for -1)
                 VMaddproducts.nameCategory = picker.Items[selectedIndex];
             }
         }
     }
+
 }

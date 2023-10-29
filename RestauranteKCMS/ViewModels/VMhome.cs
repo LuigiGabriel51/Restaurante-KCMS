@@ -13,50 +13,51 @@ using Xamarin.Forms;
 
 namespace RestauranteKCMS.ViewModels
 {
-    internal class VMhome: BaseViewModel
+    internal class VMhome : BaseViewModel
     {
-        private DBcontext dbcontext;
+        private DBcontext dbcontext; // Acesso ao banco de dados
         private bool _refresing;
-        public bool refreshing 
+        public bool refreshing
         {
             get => _refresing;
             set => SetProperty(ref _refresing, value);
         }
-        public List<Category> Categories { get; set; }
-        public List<Product> Products { get; set; }
 
-        private List<ProtuctsInCategory> protuctsInCategories;
+        public List<Category> Categories { get; set; } // Lista de categorias
+        public List<Product> Products { get; set; } // Lista de produtos
+
+        private List<ProtuctsInCategory> protuctsInCategories; // Lista de produtos em categorias
         public List<ProtuctsInCategory> ProtuctsInCategories
         {
             get => protuctsInCategories;
             set => SetProperty(ref protuctsInCategories, value);
         }
 
-
-
-        private Product _product;
+        private Product _product; // Produto recomendado
         public Product RecomendedProd
         {
             get => _product;
             set => SetProperty(ref _product, value);
         }
 
-        private ImageSource imagesource;
-        public ImageSource ImageRecomended 
-        { 
-            get => imagesource; 
-            set => SetProperty(ref imagesource, value); 
-        } 
+        private ImageSource imagesource; // Fonte da imagem do produto recomendado
+        public ImageSource ImageRecomended
+        {
+            get => imagesource;
+            set => SetProperty(ref imagesource, value);
+        }
 
-        public string Saudacoes { get; set; }
+        public string Saudacoes { get; set; } // Saudações com base na hora do dia
+
         public VMhome()
         {
-            dbcontext = new DBcontext();
-            Categories = dbcontext.ListCategory();
-            Products = dbcontext.ListProducts();
-            Organize();
-            GetDay();
+            dbcontext = new DBcontext(); // Inicializa o contexto do banco de dados
+            Categories = dbcontext.ListCategory(); // Obtém a lista de categorias
+            Products = dbcontext.ListProducts(); // Obtém a lista de produtos
+            Organize(); // Organiza os produtos em categorias
+            GetDay(); // Obtém as saudações com base na hora do dia
         }
+
         private void Organize()
         {
             ProtuctsInCategories = new List<ProtuctsInCategory>();
@@ -69,7 +70,7 @@ namespace RestauranteKCMS.ViewModels
                     Products = products
                 };
                 ProtuctsInCategories.Add(protuctsIncategories);
-                recommended();
+                recommended(); // Gera um produto recomendado
             }
         }
 
@@ -78,7 +79,7 @@ namespace RestauranteKCMS.ViewModels
             Random rnd = new Random();
             RecomendedProd = new Product();
             List<Product> prod = dbcontext.ListProducts();
-            if(prod.Count > 0)
+            if (prod.Count > 0)
             {
                 int maxIndex = prod.Count - 1;
                 int randomIndex = rnd.Next(0, maxIndex);
@@ -86,18 +87,20 @@ namespace RestauranteKCMS.ViewModels
             }
             ImageRecomended = ImageSource.FromStream(() => new MemoryStream(RecomendedProd.image));
         }
+
         private void GetDay()
         {
             var Hday = DateTime.Now.Hour;
-            if(Hday >= 5 && Hday < 12) Saudacoes = "Bom dia, (usuário)";
-            else if(Hday >= 12 && Hday < 18) Saudacoes = "Boa tarde, (usuário)";
+            if (Hday >= 5 && Hday < 12) Saudacoes = "Bom dia, (usuário)";
+            else if (Hday >= 12 && Hday < 18) Saudacoes = "Boa tarde, (usuário)";
             else Saudacoes = "Boa noite, (usuário)";
         }
     }
+
     public class ProtuctsInCategory
     {
-        public Category Category { get; set; }
-        public List<Product> Products { get; set; }
+        public Category Category { get; set; } // Uma categoria
+        public List<Product> Products { get; set; } // Lista de produtos nessa categoria
     }
-
 }
+

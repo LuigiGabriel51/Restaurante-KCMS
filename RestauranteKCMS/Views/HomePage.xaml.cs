@@ -18,6 +18,7 @@ namespace RestauranteKCMS.Views
     public partial class HomePage : ContentPage
     {
         DBcontext dbcontext;
+
         public HomePage()
         {
             InitializeComponent();
@@ -28,7 +29,10 @@ namespace RestauranteKCMS.Views
         {
             if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
             {
+                // Obtém a categoria selecionada a partir da coleção de seleção
                 ProtuctsInCategory current = e.CurrentSelection[0] as ProtuctsInCategory;
+
+                // Cria uma nova página para listar os produtos da categoria selecionada
                 var page = new ListProducts(current);
                 Navigation.PushAsync(page);
             }
@@ -36,20 +40,28 @@ namespace RestauranteKCMS.Views
 
         private void RefreshView_Refreshing(object sender, EventArgs e)
         {
+            // Atualiza a lista de categorias, produtos organizados e o produto recomendado
             var Categories = dbcontext.ListCategory();
             var Products = dbcontext.ListProducts();
             var productsOganized = Organize(Categories, Products);
             recommended();
+
+            // Atualiza a fonte de dados do CollectionView
             collectionIcons.ItemsSource = productsOganized;
+
+            // Conclui a ação de atualização
             refreshview.IsRefreshing = false;
         }
 
         private List<ProtuctsInCategory> Organize(List<Category> Categories, List<Product> Products)
         {
             var ProtuctsInCategories = new List<ProtuctsInCategory>();
+
             foreach (var category in Categories)
             {
+                // Filtra os produtos pertencentes a esta categoria
                 var products = Products.Where(x => x.Idcategory == category.Name).ToList();
+
                 var protuctsIncategories = new ProtuctsInCategory()
                 {
                     Category = category,
@@ -57,6 +69,7 @@ namespace RestauranteKCMS.Views
                 };
                 ProtuctsInCategories.Add(protuctsIncategories);
             }
+
             return ProtuctsInCategories;
         }
 
@@ -65,20 +78,24 @@ namespace RestauranteKCMS.Views
             Random rnd = new Random();
             var RecomendedProd = new Product();
             List<Product> prod = dbcontext.ListProducts();
+
             if (prod.Count > 0)
             {
                 int maxIndex = prod.Count - 1;
                 int randomIndex = rnd.Next(0, maxIndex);
                 RecomendedProd = prod[randomIndex];
             }
+
+            // Define o contexto de ligação (BindingContext) para o produto recomendado
             grid.BindingContext = RecomendedProd;
         }
-
 
         private void enterRecomend(object sender, EventArgs e)
         {
             Button button = sender as Button;
             Product current = button.BindingContext as Product;
+
+            // Cria uma nova página para visualizar o produto recomendado
             var page = new ViewProduct(current);
             Navigation.PushAsync(page);
         }
@@ -87,8 +104,11 @@ namespace RestauranteKCMS.Views
         {
             Grid gr = sender as Grid;
             Product current = gr.BindingContext as Product;
+
+            // Cria uma nova página para visualizar o produto recomendado
             var page = new ViewProduct(current);
             Navigation.PushAsync(page);
         }
     }
+
 }

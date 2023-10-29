@@ -16,6 +16,7 @@ namespace RestauranteKCMS.Views.GenericView
     public partial class ViewProduct : ContentPage
     {
         Product Product;
+
         public ViewProduct(Product product)
         {
             InitializeComponent();
@@ -27,24 +28,31 @@ namespace RestauranteKCMS.Views.GenericView
         {
             int unidadeI = Convert.ToInt32(unidade.Text);
             unidade.Text = Convert.ToString(unidadeI + 1);
-            price.Text = $"Total:    R$ {Product.price * (unidadeI + 1)}";
+
+            // Atualiza o texto do preço com base na quantidade de unidades
+            price.Text = $"Total: R$ {Product.price * (unidadeI + 1)}";
         }
 
         private void sub(object sender, EventArgs e)
         {
             int unidadeI = Convert.ToInt32(unidade.Text);
+
             if (unidadeI > 0)
             {
                 unidade.Text = Convert.ToString(unidadeI - 1);
-                price.Text = $"Total:    R$ {Product.price * (unidadeI - 1)}";
+
+                // Atualiza o texto do preço com base na quantidade de unidades
+                price.Text = $"Total: R$ {Product.price * (unidadeI - 1)}";
             }
         }
 
         private void confirm(object sender, EventArgs e)
         {
             int unidadeI = Convert.ToInt32(unidade.Text);
+
             if (unidadeI > 0)
             {
+                // Exibe uma mensagem de compra realizada
                 Context context = Android.App.Application.Context;
                 string text = "Compra realizada!";
                 ToastLength duration = ToastLength.Short;
@@ -54,4 +62,5 @@ namespace RestauranteKCMS.Views.GenericView
             }
         }
     }
+
 }

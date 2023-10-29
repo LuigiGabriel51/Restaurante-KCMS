@@ -20,20 +20,22 @@ using Image = Xamarin.Forms.Image;
 
 namespace RestauranteKCMS.ViewModels
 {
-    internal class VMaddproducts: BaseViewModel
+    internal class VMaddproducts : BaseViewModel
     {
-        private DBcontext dbcontext;
-        public List<Category> categories {  get; set; }
-        public static string nameCategory { get; set; }
+        private DBcontext dbcontext; // Acesso ao banco de dados
 
-        private List<string> namecategories;
-        public List<string> NameCategories 
+        public List<Category> categories { get; set; } // Lista de categorias
+
+        public static string nameCategory { get; set; } // Nome da categoria selecionada
+
+        private List<string> namecategories; // Lista de nomes de categorias
+        public List<string> NameCategories
         {
-            get => namecategories; 
-            set => SetProperty(ref namecategories, value); 
+            get => namecategories;
+            set => SetProperty(ref namecategories, value);
         }
 
-        private string _nameProduct;
+        private string _nameProduct; // Nome do produto
         public string NameProduct
         {
             get { return _nameProduct; }
@@ -43,7 +45,7 @@ namespace RestauranteKCMS.ViewModels
             }
         }
 
-        private string _descriptionproduct;
+        private string _descriptionproduct; // Descrição do produto
         public string DescriptionProduct
         {
             get { return _descriptionproduct; }
@@ -53,7 +55,7 @@ namespace RestauranteKCMS.ViewModels
             }
         }
 
-        private float _priceproduct;
+        private float _priceproduct; // Preço do produto
         public float PriceProduct
         {
             get { return _priceproduct; }
@@ -62,29 +64,31 @@ namespace RestauranteKCMS.ViewModels
                 _priceproduct = value;
             }
         }
-        private byte[] imageByte { get; set; }
 
-        private ImageSource imagesource;
+        private byte[] imageByte { get; set; } // Array de bytes da imagem do produto
+
+        private ImageSource imagesource; // Fonte da imagem do produto
         public ImageSource ImageSource
         {
             get => imagesource;
             set => SetProperty(ref imagesource, value);
-
         }
 
-        public ICommand RegisterCommand => new Command(Register);
-        public ICommand PickImage => new Command(SelectImage);
-        public ICommand SaveProduct => new Command(saveproduct);
+        public ICommand RegisterCommand => new Command(Register); // Comando para registrar uma nova categoria
+        public ICommand PickImage => new Command(SelectImage); // Comando para escolher uma imagem
+        public ICommand SaveProduct => new Command(saveproduct); // Comando para salvar o produto
 
         public VMaddproducts()
         {
-            dbcontext = new DBcontext();
-            var category = dbcontext.ListCategory();
+            dbcontext = new DBcontext(); // Inicializa o contexto do banco de dados
+
+            var category = dbcontext.ListCategory(); // Obtém a lista de categorias do banco de dados
             NameCategories = new List<string>();
+
             if (category != null)
             {
                 categories = category;
-                foreach(var categorie in categories)
+                foreach (var categorie in categories)
                 {
                     NameCategories.Add(categorie.Name);
                 }
@@ -95,6 +99,7 @@ namespace RestauranteKCMS.ViewModels
         {
             if (!String.IsNullOrEmpty(NameProduct))
             {
+                // Cria uma nova categoria
                 Category newCategory = new Category()
                 {
                     Name = NameProduct
@@ -102,10 +107,12 @@ namespace RestauranteKCMS.ViewModels
                 dbcontext.CreateCategory(newCategory);
             }
         }
-        public async void SelectImage() 
-        {   
-            await PickAndShow();
+
+        public async void SelectImage()
+        {
+            await PickAndShow(); // Abre a galeria para escolher uma imagem
         }
+
         async Task PickAndShow()
         {
             try
@@ -115,11 +122,13 @@ namespace RestauranteKCMS.ViewModels
                     Title = "Escolha uma foto"
                 });
                 if (photo == null) { return; }
+
                 Stream sourceStream = await photo.OpenReadAsync();
                 MemoryStream memoryStream = new MemoryStream();
                 await sourceStream.CopyToAsync(memoryStream);
                 byte[] byteArray = memoryStream.ToArray();
                 imageByte = byteArray;
+
                 if (imageByte != null && imageByte.Length > 0)
                 {
                     ImageSource = ImageSource.FromStream(() => new MemoryStream(imageByte));
@@ -133,6 +142,7 @@ namespace RestauranteKCMS.ViewModels
 
         public async Task<PermissionStatus> CheckAndRequestCameraPermission()
         {
+            // Verifica e solicita permissão para acessar o armazenamento
             var status = await Permissions.CheckStatusAsync<Permissions.StorageRead>();
 
             if (status == PermissionStatus.Granted)
@@ -150,23 +160,27 @@ namespace RestauranteKCMS.ViewModels
 
         private void saveproduct()
         {
-            if(string.IsNullOrEmpty(NameProduct) || string.IsNullOrEmpty(DescriptionProduct) || PriceProduct == 0) { return; }
+            if (string.IsNullOrEmpty(NameProduct) || string.IsNullOrEmpty(DescriptionProduct) || PriceProduct == 0) { return; }
+
+            // Cria um novo produto com os detalhes fornecidos
             Product product = new Product()
             {
                 name = NameProduct,
                 description = DescriptionProduct,
                 price = PriceProduct,
                 image = imageByte,
-                Idcategory = nameCategory 
+                Idcategory = nameCategory
             };
-            dbcontext.CreateProducts(product);
 
+            dbcontext.CreateProducts(product); // Salva o produto no banco de dados
+
+            // Exibe uma mensagem de "toast" informando que o novo produto foi adicionado
             Context context = Android.App.Application.Context;
             string text = "Novo produto adicionado";
             ToastLength duration = ToastLength.Short;
-
             var toast = Toast.MakeText(context, text, duration);
             toast.Show();
         }
     }
+
 }

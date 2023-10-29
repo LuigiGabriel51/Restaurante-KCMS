@@ -13,28 +13,35 @@ using Xamarin.Forms.Xaml;
 namespace RestauranteKCMS.Views.GenericView
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListProducts : ContentPage
-	{
+    public partial class ListProducts : ContentPage
+    {
         ProtuctsInCategory category;
 
-        public ListProducts (ProtuctsInCategory category)
-		{
-			InitializeComponent ();
+        public ListProducts(ProtuctsInCategory category)
+        {
+            InitializeComponent();
             this.category = category;
-			layout.BindingContext = this.category;
-		}
+            layout.BindingContext = this.category;
+        }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             SearchBar searchBar = (SearchBar)sender;
-            Listproducts.ItemsSource = this.category.Products.Where(x=>x.name.ToLowerInvariant().Contains(searchBar.Text)).ToList();
+
+            // Filtra a lista de produtos com base no texto da barra de pesquisa
+            Listproducts.ItemsSource = this.category.Products
+                .Where(x => x.name.ToLowerInvariant().Contains(searchBar.Text))
+                .ToList();
         }
 
         private void Listproducts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Product current = e.SelectedItem as Product;
+
+            // Cria uma nova página para exibir detalhes do produto selecionado
             var page = new ViewProduct(current);
             Navigation.PushAsync(page);
         }
     }
+
 }

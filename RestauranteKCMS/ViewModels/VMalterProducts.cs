@@ -10,39 +10,42 @@ using System.Windows.Input;
 
 namespace RestauranteKCMS.ViewModels
 {
-    internal class VMalterProducts: BaseViewModel
+    internal class VMalterProducts : BaseViewModel
     {
-        private DBcontext DBcontext;
+        private DBcontext DBcontext; // Acesso ao banco de dados
 
-        private List<Product> products;
-        public List<Product> Products 
+        private List<Product> products; // Lista de produtos
+        public List<Product> Products
         {
             get => products;
             set => SetProperty(ref products, value);
         }
 
-        public List<Category> categories;
-        public List<Category > Categories 
-        { 
-            get => categories; 
-            set => SetProperty(ref categories, value); 
+        public List<Category> categories; // Lista de categorias
+        public List<Category> Categories
+        {
+            get => categories;
+            set => SetProperty(ref categories, value);
         }
-        public static List<string> NameCategories { get; set; }
-        public static string nameCategory { get; set; }
 
-        private bool refreshing;
+        public static List<string> NameCategories { get; set; } // Lista de nomes de categorias
+        public static string nameCategory { get; set; } // Nome da categoria selecionada
+
+        private bool refreshing; // Sinalizador para indicar se a lista está sendo atualizada
         public bool Refreshing
         {
             get => refreshing;
             set => SetProperty(ref refreshing, value);
         }
 
-        public ICommand Refresh => new Command(refresh);
-        public VMalterProducts() 
+        public ICommand Refresh => new Command(refresh); // Comando para atualizar a lista
+
+        public VMalterProducts()
         {
-            DBcontext = new DBcontext();
-            Products = DBcontext.ListProducts();
-            Categories = DBcontext.ListCategory();
+            DBcontext = new DBcontext(); // Inicializa o contexto do banco de dados
+
+            Products = DBcontext.ListProducts(); // Obtém a lista de produtos do banco de dados
+            Categories = DBcontext.ListCategory(); // Obtém a lista de categorias do banco de dados
 
             var category = Categories;
             NameCategories = new List<string>();
@@ -58,8 +61,8 @@ namespace RestauranteKCMS.ViewModels
 
         private void refresh()
         {
-            Products = DBcontext.ListProducts();
-            Categories = DBcontext.ListCategory();
+            Products = DBcontext.ListProducts(); // Atualiza a lista de produtos do banco de dados
+            Categories = DBcontext.ListCategory(); // Atualiza a lista de categorias do banco de dados
 
             var category = Categories;
             NameCategories = new List<string>();
@@ -71,7 +74,7 @@ namespace RestauranteKCMS.ViewModels
                     NameCategories.Add(categorie.Name);
                 }
             }
-            Refreshing = false;
+            Refreshing = false; // Define o sinalizador de atualização como falso após a atualização da lista
         }
     }
 }

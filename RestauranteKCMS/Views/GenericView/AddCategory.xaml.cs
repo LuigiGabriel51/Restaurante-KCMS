@@ -20,11 +20,15 @@ namespace RestauranteKCMS.Views.GenericView
 
         private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(e.CurrentSelection != null && e.CurrentSelection.Count > 0) 
+            if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
             {
+                // Obtém o item selecionado a partir da coleção de seleção
                 string current = e.CurrentSelection[0] as string;
+
+                // Define a propriedade estática itemSelected na ViewModel para o item selecionado
                 VMaddcategory.itemSelected = current;
             }
         }
     }
+
 }

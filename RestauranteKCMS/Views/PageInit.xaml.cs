@@ -19,7 +19,9 @@ namespace RestauranteKCMS.Views
 
         private void EnterButton(object sender, EventArgs e)
         {
+            // Redireciona o usuário para a página inicial (HomePage) usando o Shell
             Shell.Current.GoToAsync("///HomePage");
         }
     }
+
 }
