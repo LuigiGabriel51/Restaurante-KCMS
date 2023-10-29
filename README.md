@@ -60,7 +60,7 @@ Adicionais: **Tela de compra**
 <img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/bd7f6488-1198-4b1e-8a20-eb3eb2069ade">
 
 >Aterando a categoria de um produto
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/027e228e-88df-4734-b358-89c7d476b7b2">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/1e5ec793-5069-4bfd-8931-0e9a50452253">
 
 
 ## Pré-requisitos
