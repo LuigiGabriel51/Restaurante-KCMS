@@ -26,44 +26,44 @@ Adicionais:
 ## Capturas de Tela
 
 > Tela inicial que apresenta a logo da empresa.
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/12aaf263-987b-4539-b5ba-0bb1b3e1f4e4" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/4f98b9a2-3c80-411e-a49c-d48d6a64313f" width="300" height="600">
 
 > Tela principal do aplicativo mostrando categorias, produtos e recomendados.
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/bacde9f5-e1a2-4a46-ad7a-3001024a80ec" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/161d68e5-a198-4c07-969c-a6a2db964ce0" width="300" height="600">
 
 > Tela "Criar", uma aba para levar o usuário para as Página de criação de produtos e categorias.
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/b40f723e-299c-4231-addc-a7cc17a4c40f" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/7fd85684-7154-47ec-b669-1b03fcb37aba" width="300" height="600">
 
 > Página de inserção de uma nova categoria.
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/58fb7bf4-94cd-4920-a311-9698ae5ff0f0" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/83b1dec9-dcf6-40cd-a456-eb6c2220661d" width="300" height="600">
 
 > Página de inserção de um novo produto.
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/5d3e5002-eb6c-435c-9073-97919b231377" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/1824388d-dfd7-40af-9612-e6309484b3d9" width="300" height="600">
 
 > Página de uma categoria específica do usuário
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/a03a5827-d9d4-479d-a6fd-43896d1009fd" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/9a22077e-7fbc-461b-bc59-c16e3bc10634" width="300" height="600">
 
 > Página de compra (simulação), onde o usuário pode adicionar vários pedidos
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/6e565cc3-2aae-43c5-9602-514faf9d47f3" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/0a9166d4-339b-4373-95d5-0122ca89ff1a" width="300" height="600">
 
 > Aba lateral (FlyoutItem) onde tem os direitos do app, as redes sociais do app, e rotas para a página central do app e a página de alterar a categoria de um produto
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/6ba9f327-1a25-49eb-9608-e9abc60c5da2" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/1860f39b-cdaf-4481-a0d4-d7e0b47673ee" width="300" height="600">
 
 > Página de alteração de produto, aqui você pode alterar a cateoria de qualquer produto
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/4549a541-eb6c-4d85-83d9-3718b81dbf51" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/cc8bfe20-4801-4fb9-a9c5-9206dcf82eaf" width="300" height="600">
 
 > Continuando na Página de alteração de produtos, quando o usuário clica no item, abre um card para a alteração
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/9a699d38-83bf-4985-8e7f-375415f3e5ea" width="300" height="600">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/944717b1-51d5-4227-9709-1c69a32740dd" width="300" height="600">
 
 ## Demonstraçoes
 >Adicionando uma nova categoria
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/81bde887-5478-4c90-b064-ae13b9def98d">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/26a241f6-2fd7-48ad-9f4f-96118e3f198a">
 
 >Adicionando um novo produto
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/bd7f6488-1198-4b1e-8a20-eb3eb2069ade">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/73070e53-582a-4518-9017-4aab831801ad">
 
 >Aterando a categoria de um produto
-<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/1e5ec793-5069-4bfd-8931-0e9a50452253">
+<img src="https://github.com/LuigiGabriel51/Restaurante-KCMS/assets/112506473/3d8dd692-3eb5-4740-a999-06c2cf3d8d0c">
 
 
 ## Pré-requisitos
