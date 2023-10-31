@@ -13,19 +13,19 @@
                 FlyoutItemIsVisible="True" >
         
         <ShellContent Title="Início" ContentTemplate="{DataTemplate local:HomePage}" 
-                  Shell.UnselectedColor="Silver" Shell.TitleColor="White" Icon="botao_home"
-                  Shell.TabBarTitleColor="DodgerBlue" Route="HomePage"/>
+                      Shell.UnselectedColor="Silver" Shell.TitleColor="White" Icon="botao_home"
+                      Shell.TabBarTitleColor="White" Route="HomePage" Shell.BackgroundColor="#001d3b"/>
 
         <ShellContent Title="Criar" Route="CreatePage" ContentTemplate="{DataTemplate local:CreatePage}" 
-                  Shell.UnselectedColor="Silver" Shell.TitleColor="White" Shell.TabBarUnselectedColor="Silver"
-                  Icon="adicionar" Shell.FlyoutItemIsVisible="True" Shell.TabBarTitleColor="DodgerBlue"/>
+                      Shell.BackgroundColor="#001d3b" Shell.UnselectedColor="Silver" Shell.TitleColor="White" Shell.TabBarUnselectedColor="Silver"
+                      Icon="adicionar" Shell.FlyoutItemIsVisible="True" Shell.TabBarTitleColor="White"/>
 
     </FlyoutItem>
     
     <FlyoutItem Title="Alterar Produto" FlyoutIcon="mudar">
         <ShellContent Title="Alterar Produto" Icon="mudar.png"
-                          ContentTemplate="{DataTemplate local:SetCategoriaProducts}" 
-                          Route="alterPage"/>
+                      ContentTemplate="{DataTemplate local:SetCategoriaProducts}" 
+                      Route="alterPage" Shell.BackgroundColor="#001d3b"/>
     </FlyoutItem>
 
     

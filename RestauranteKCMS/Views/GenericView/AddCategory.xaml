@@ -21,9 +21,9 @@
             </Grid.RowDefinitions>
             <Label Text="Adicionar nova categoria" FontSize="15" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center"
                    VerticalOptions="Center"/>
-            <Entry BackgroundColor="DodgerBlue" Placeholder="Nome da Categoria" Grid.Row="1" Text="{Binding NameCategory}"
+            <Entry BackgroundColor="#f0f2d8" Placeholder="Nome da Categoria" Grid.Row="1" Text="{Binding NameCategory}"
                    WidthRequest="300" HorizontalOptions="Center" HorizontalTextAlignment="Center"
-                   TextColor="Black"/>
+                   TextColor="#001d3b"/>
 
             <Label Text="Escolha um ícone para sua categoria" Grid.Row="3" TextColor="Black" Margin="30,30,0,0"/>
 
@@ -64,10 +64,10 @@
                                 </VisualState>
                             </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            
-                            <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="CornflowerBlue" VerticalOptions="CenterAndExpand"
+
+                            <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="#f0f2d8" VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="Center" CornerRadius="50" HasShadow="True" Padding="0">
-                                <Label Text="{Binding .}" TextColor="White" FontFamily="Fasolid" FontSize="20" HorizontalOptions="Center"
+                                <Label Text="{Binding .}" TextColor="#001d3b" FontFamily="Fasolid" FontSize="20" HorizontalOptions="Center"
                                        VerticalOptions="Center"/>
                             </Frame >
                         </Grid>
@@ -75,8 +75,8 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
                 
-            <Button Text="Criar" Command="{Binding RegisterCommand}" Grid.Row="5" CornerRadius="20" 
-                    HorizontalOptions="Center" WidthRequest="250" VerticalOptions="Center"/>
+            <Button Text="Criar" TextColor="White" Command="{Binding RegisterCommand}" Grid.Row="5" CornerRadius="20" 
+                    HorizontalOptions="Center" WidthRequest="250" VerticalOptions="Center" BackgroundColor="#001d3b"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

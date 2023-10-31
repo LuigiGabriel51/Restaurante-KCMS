@@ -2,4 +2,18 @@
 <resources>
 	<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 	</style>
+
+	<style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+	</style>
+
+	<style name="MyTheme" parent="MyTheme.Base">
+	</style>
+
+	<style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+		<item name="android:windowBackground">@drawable/kcms</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowActionBar">true</item>
+	</style>
+	
 </resources>

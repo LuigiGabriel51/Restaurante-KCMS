@@ -88,6 +88,12 @@ namespace RestauranteKCMS.Views
 
             // Define o contexto de ligação (BindingContext) para o produto recomendado
             grid.BindingContext = RecomendedProd;
+            frame.BindingContext = prod;
+            if (prod.Count > 0)
+            {
+                frame.IsVisible = true;
+            }
+            else frame.IsVisible = false;
         }
 
         private void enterRecomend(object sender, EventArgs e)

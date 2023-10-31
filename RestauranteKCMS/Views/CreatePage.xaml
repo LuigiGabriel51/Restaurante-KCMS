@@ -3,9 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RestauranteKCMS.Views.CreatePage"
              xmlns:vm="clr-namespace:RestauranteKCMS.ViewModels">
-    <ContentPage.BindingContext>
-        <vm:VMcreate/>
-    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
 
         <Grid Padding="30">
@@ -28,7 +26,7 @@
                     <Label Text="Aqui você poderá adicionar uma nova categoria, escolha um bom nome, e aproveite sua nova categoria." 
                            TextColor="Black" Grid.Row="1" FontSize="10"/>
                     <Button Text=">" Grid.Row="2" WidthRequest="100" HorizontalOptions="End" Padding="0"
-                            FontSize="10" Clicked="pushAddCategory"/>
+                            FontSize="20" Clicked="pushAddCategory" BackgroundColor="#001d3b"/>
                 </Grid>
             </Frame>
             <Frame Grid.Row="2">
@@ -43,7 +41,7 @@
                     <Label Text="Aqui você poderá adicionar uma novo prato, personalizar da sua forma, escolha uma categoria e Voilà, um novo prato!" 
                            TextColor="Black" Grid.Row="1" FontSize="10"/>
                     <Button Text=">" Grid.Row="2" WidthRequest="100" HorizontalOptions="End" Padding="0"
-                            FontSize="10" Clicked="pushAddProduct"/>
+                            FontSize="20" Clicked="pushAddProduct" BackgroundColor="#001d3b"/>
                 </Grid>
             </Frame>
         </Grid>

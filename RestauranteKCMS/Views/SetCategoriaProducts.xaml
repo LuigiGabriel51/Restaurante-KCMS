@@ -34,7 +34,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <Grid Margin="10">
-                                    <Frame BackgroundColor="DodgerBlue" Padding="5">
+                                        <Frame BackgroundColor="#001d3b" Padding="5">
                                         <Grid>
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="30"/>
@@ -46,7 +46,8 @@
                                             </Grid.ColumnDefinitions>
                                             <Image Source="{Binding image, Converter={StaticResource ByteArrayToImage}}" Grid.RowSpan="2"
                                                    HeightRequest="50" />
-                                                <Label Text="{Binding name}" Grid.Column="1" MaxLines="2" Grid.RowSpan="2" VerticalOptions="Center"/>
+                                                <Label Text="{Binding name}" Grid.Column="1" MaxLines="2" Grid.RowSpan="2" VerticalOptions="Center"
+                                                       TextColor="White"/>
                                         </Grid>
                                     </Frame>
                                 </Grid>
@@ -58,7 +59,7 @@
                     </ListView.GestureRecognizers>
                 </ListView>
                 <Frame Grid.Row="1" HeightRequest="210" VerticalOptions="Center" x:Name="card" IsVisible="false"
-                       BackgroundColor="CornflowerBlue">
+                       BackgroundColor="#001d3b">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="60"/>
@@ -70,8 +71,8 @@
                                Grid.Row="0" HorizontalOptions="Start"/>
                         <Label Text="{Binding name}" HorizontalOptions="Center" Margin="20" TextColor="White" Grid.Row="0"/>
                         <Button Text="{Static model:IconFont.Trash}" HorizontalOptions="End" VerticalOptions="Center"
-                                TextColor="Red" Padding="1" HeightRequest="50" WidthRequest="50" BackgroundColor="White"
-                                Clicked="deleteProduct" FontFamily="Fasolid" CornerRadius="30"/>
+                                TextColor="Red" Padding="1" HeightRequest="40" WidthRequest="40" BackgroundColor="White"
+                                Clicked="deleteProduct" FontFamily="Fasolid" CornerRadius="30" FontSize="17"/>
                         <Label Text="Alterar Categoria" HorizontalOptions="Start" Margin="10" TextColor="White" FontSize="10"
                                Grid.Row="1"/>
                         <Picker ItemsSource="{Binding NameCategories}" Title="Selecione uma categoria" TextColor="Black"
@@ -80,7 +81,7 @@
                                 x:Name="picker" Grid.Row="2"/>
 
                         <Button Text="Salvar" HeightRequest="30" WidthRequest="150" HorizontalOptions="Center"
-                                Padding="1" BackgroundColor="White" TextColor="SlateBlue" Clicked="Button_Clicked"
+                                Padding="1" BackgroundColor="White" TextColor="#001d3b" Clicked="Button_Clicked"
                                 Grid.Row="3"/>
                     </Grid>
                 </Frame>

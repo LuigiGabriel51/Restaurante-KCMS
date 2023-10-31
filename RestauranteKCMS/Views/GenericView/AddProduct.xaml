@@ -20,21 +20,21 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Text="Adicionar novo Produto" TextColor="Black" FontSize="17" HorizontalOptions="Center" />
-            <Entry Grid.Row="1" Placeholder="Nome do produto" BackgroundColor="DodgerBlue" Text="{Binding NameProduct}"
+            <Entry Grid.Row="1" Placeholder="Nome do produto" BackgroundColor="#f0f2d8" Text="{Binding NameProduct}"
                    HorizontalOptions="Center" WidthRequest="300"/>
-            <Entry Grid.Row="2" Placeholder="Descrição do produto" BackgroundColor="DodgerBlue" Text="{Binding DescriptionProduct}"
+            <Entry Grid.Row="2" Placeholder="Descrição do produto" BackgroundColor="#f0f2d8" Text="{Binding DescriptionProduct}"
                    HorizontalOptions="Center" WidthRequest="300"/>
             <Button Text="Image" Grid.Row="3" Command="{Binding PickImage}" HorizontalOptions="End"
                     WidthRequest="100" HeightRequest="40" VerticalOptions="Center" CornerRadius="20" Margin="0,0,0,0"
-                    BackgroundColor="CornflowerBlue"/>
+                    BackgroundColor="#001d3b"/>
             <Image Source="{Binding ImageSource}" Grid.Row="3" HorizontalOptions="Center" 
                    WidthRequest="180" HeightRequest="160" Margin="-120,0,0,0" Aspect="AspectFill"/>
             <Picker Grid.Row="4" ItemsSource="{Binding NameCategories}" Title="Selecione uma categoria" TextColor="Black"
-                    HorizontalOptions="Start" BackgroundColor="DodgerBlue" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                    HorizontalOptions="Start" BackgroundColor="#f0f2d8" SelectedIndexChanged="Picker_SelectedIndexChanged">
                 
             </Picker>
-            <Entry Text="{Binding PriceProduct}" Grid.Row="5" BackgroundColor="DodgerBlue" Placeholder="Preço do produto" Keyboard="Telephone"/>
-            <Button Text="Adicionar" Grid.Row="6" Command="{Binding SaveProduct}" HorizontalOptions="Center" BackgroundColor="CornflowerBlue"
+            <Entry Text="{Binding PriceProduct}" Grid.Row="5" BackgroundColor="#f0f2d8" Placeholder="Preço do produto" Keyboard="Telephone"/>
+            <Button Text="Adicionar" Grid.Row="6" Command="{Binding SaveProduct}" HorizontalOptions="Center" BackgroundColor="#001d3b"
         WidthRequest="150" HeightRequest="50" VerticalOptions="Center" CornerRadius="20" Margin="0,0,0,0"/>
             
         </Grid>
